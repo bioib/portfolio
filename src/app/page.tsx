@@ -1,7 +1,8 @@
-import Link from "next/link";
 import Image from "next/image";
-import MobileNav from "@/components/mobile-nav";
-import ThemeToggle from "@/components/theme-toggle";
+import Header from "@/components/header";
+import { Folder, Info, Linkedin, Mail } from "lucide-react";
+import Link from "next/link";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 
 const projects = [
   {
@@ -42,66 +43,39 @@ const contactLinks = [
   {
     name: "Email",
     url: "mailto:fabioyanda@gmail.com",
+    icon: <Mail />,
   },
   {
     name: "LinkedIn",
     url: "https://linked.in/in/fabio-yanda",
+    icon: <Linkedin />,
   },
   {
     name: "GitHub",
     url: "https://github.com/bioib",
+    icon: <SiGithub />,
   },
 ];
 
 export default function Home() {
   return (
     <div>
-      {/* Mobile Navbar */}
-      <MobileNav />
-      {/* Navbar */}
-      <nav className="bg-mantle shadow-base hidden p-6 shadow-md md:flex">
-        <div className="container mx-auto flex items-center justify-between">
-          <h1 className="text-xl font-bold">Fabio Reva Yanda</h1>
-          <div className="gap-4 font-medium flex items-center justify-center">
-            <Link
-              href="#about"
-              className="hover:text-text-hover hover:bg-surface-0 rounded px-4 py-2 transition-colors duration-300"
-            >
-              About
-            </Link>
-            <Link
-              href="#projects"
-              className="hover:text-text-hover hover:bg-surface-0 rounded px-4 py-2 transition-colors duration-300"
-            >
-              Projects
-            </Link>
-            <Link
-              href="#contact"
-              className="hover:text-text-hover hover:bg-surface-0 rounded px-4 py-2 transition-colors duration-300"
-            >
-              Contact
-            </Link>
-            <ThemeToggle />
-          </div>
-        </div>
-      </nav>
-
+      <Header />
       {/* Hero Section */}
       <section className="py-20 text-center">
         <div className="container mx-auto px-4">
-          <h2 className="mb-4 text-4xl font-bold">
+          {/* <h2 className="mb-4 text-5xl font-bold">
             Hi, I&apos;m Fabio Reva Yanda
-          </h2>
-          <p className="text-subtext mb-6 text-lg">
-            A Full-Stack Developer passionate about building modern web
-            applications with Next.js, Node.js, and more.
+          </h2> */}
+          <p className="text-subtext mx-auto mb-6 max-w-md text-2xl font-medium">
+            Building Scalable, High-Performance Web Apps with Modern Tech Stacks
           </p>
-          <a
-            href="#projects"
-            className="bg-blue text-mantle hover:bg-blue-hover rounded px-4 py-2 font-semibold transition-colors"
+          <Link
+            href="#contact"
+            className="bg-blue text-mantle hover:bg-blue-hover mx-auto flex w-fit gap-2 rounded px-4 py-2 font-medium transition-colors"
           >
-            View My Work
-          </a>
+            <Mail /> Contact Me
+          </Link>
         </div>
       </section>
 
@@ -109,10 +83,12 @@ export default function Home() {
 
       {/* About Section */}
       <section id="about" className="py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h3 className="mb-6 text-3xl font-bold">About Me</h3>
+        <div className="container mx-auto px-4">
+          <h3 className="mb-6 flex items-center justify-center gap-2 text-3xl font-bold">
+            <Info /> About Me
+          </h3>
           <p className="mx-auto max-w-2xl text-lg">
-            I&apos;m a beginner full-stack developer with experience in Next.js,
+            I&apos;m a full-stack developer with experience in Next.js,
             JavaScript, TypeScript, Node.js, MongoDB, MySQL, and a bit of
             WordPress. I enjoy creating user-friendly applications and learning
             new technologies to solve real-world problems.
@@ -125,12 +101,14 @@ export default function Home() {
       {/* Projects Section */}
       <section id="projects" className="py-20">
         <div className="container mx-auto px-4">
-          <h3 className="mb-10 text-center text-3xl font-bold">My Projects</h3>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <h3 className="mb-10 flex items-center justify-center gap-2 text-3xl font-bold">
+            <Folder /> My Projects
+          </h3>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="bg-surface-0 shadow-mantle rounded p-6 shadow"
+                className="border-surface-0 shadow-mantle relative rounded-md border p-3 shadow transition-all hover:shadow-lg"
               >
                 <Image
                   src={project.image}
@@ -140,10 +118,10 @@ export default function Home() {
                   className="mb-4 h-40 w-full rounded object-cover"
                 />
                 <h4 className="mb-2 text-xl font-semibold">{project.name}</h4>
-                <p className="text-subtext mb-4">{project.description}</p>
+                <p className="text-subtext mb-8">{project.description}</p>
                 <a
                   href={project.url}
-                  className="text-blue hover:text-blue-hover font-medium transition-colors"
+                  className="text-blue hover:text-blue-hover absolute bottom-0 pb-2 font-medium transition-colors"
                 >
                   View Project
                 </a>
@@ -162,15 +140,15 @@ export default function Home() {
           <p className="mb-6 text-lg">
             Interested in collaborating? Reach out to me!
           </p>
-          <div className="space-x-4">
+          <div className="flex items-center justify-center gap-6">
             {contactLinks.map((link, index) => (
               <a
                 key={index}
                 href={link.url}
                 target="_blank"
-                className="bg-blue text-mantle hover:bg-blue-hover rounded px-4 py-2 font-semibold transition-colors"
+                className="bg-blue text-mantle hover:bg-blue-hover flex items-center gap-2 rounded px-4 py-2 font-semibold transition-colors"
               >
-                {link.name}
+                {link.icon} {link.name}
               </a>
             ))}
           </div>
