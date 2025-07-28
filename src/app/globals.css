@@ -12,6 +12,17 @@
   --surface-0: hsl(223deg, 16%, 83%);
 }
 
+[data-theme="dark"] {
+  --base: #1e1e2e;
+  --subtext: #bac2de;
+  --text: #cdd6f4;
+  --crust: hsl(240deg, 23%, 9%);
+  --mantle: #181825;
+  --blue: #89b4fa;
+  --blue-hover: hsl(217deg, 92%, 64%);
+  --surface-0: hsl(237deg, 16%, 23%);
+}
+
 @theme inline {
   --color-base: var(--base);
   --color-text: var(--text);
@@ -26,7 +37,7 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --base: #1e1e2e;
     --subtext: #bac2de;
@@ -37,7 +48,7 @@
     --blue-hover: hsl(217deg, 92%, 64%);
     --surface-0: hsl(237deg, 16%, 23%);
   }
-}
+} */
 
 body {
   background: var(--base);

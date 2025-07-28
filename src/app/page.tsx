@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import MobileNav from "@/components/mobile-nav";
+import ThemeToggle from "@/components/theme-toggle";
 
 const projects = [
   {
@@ -61,7 +62,7 @@ export default function Home() {
       <nav className="bg-mantle shadow-base hidden p-6 shadow-md md:flex">
         <div className="container mx-auto flex items-center justify-between">
           <h1 className="text-xl font-bold">Fabio Reva Yanda</h1>
-          <div className="space-x-4 font-medium">
+          <div className="gap-4 font-medium flex items-center justify-center">
             <Link
               href="#about"
               className="hover:text-text-hover hover:bg-surface-0 rounded px-4 py-2 transition-colors duration-300"
@@ -80,6 +81,7 @@ export default function Home() {
             >
               Contact
             </Link>
+            <ThemeToggle />
           </div>
         </div>
       </nav>
