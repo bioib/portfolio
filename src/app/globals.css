@@ -6,10 +6,13 @@
   --text-hover: hsl(234deg, 16%, 23%);
   --subtext: hsl(233deg, 13%, 41%);
   --mantle: hsl(220deg, 22%, 92%);
+  --maroon: hsl(355deg, 76%, 59%);
+  --maroon-hover: hsl(355deg, 76%, 47%);
   --crust: hsl(220deg, 21%, 89%);
   --blue: hsl(220deg, 91%, 54%);
   --blue-hover: hsl(220deg, 91%, 42%);
   --surface-0: hsl(223deg, 16%, 83%);
+  --peach: hsl(22deg, 99%, 52%);
 }
 
 [data-theme="dark"] {
@@ -19,6 +22,9 @@
   --text-hover: hsl(226, 64%, 100%);
   --crust: hsl(240deg, 23%, 9%);
   --mantle: #181825;
+  --maroon: hsl(350deg, 65%, 77%);
+  --maroon-hover: hsl(350deg, 65%, 65%);
+  --peach: hsl(23deg, 92%, 75%);
   --blue: #89b4fa;
   --blue-hover: hsl(217deg, 92%, 64%);
   --surface-0: hsl(237deg, 16%, 23%);
@@ -33,26 +39,20 @@
   --color-crust: var(--crust);
   --color-blue: var(--blue);
   --color-blue-hover: var(--blue-hover);
+  --color-maroon: var(--maroon);
+  --color-maroon-hover: var(--maroon-hover);
   --color-surface-0: var(--surface-0);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --base: #1e1e2e;
-    --subtext: #bac2de;
-    --text: #cdd6f4;
-    --crust: hsl(240deg, 23%, 9%);
-    --mantle: #181825;
-    --blue: #89b4fa;
-    --blue-hover: hsl(217deg, 92%, 64%);
-    --surface-0: hsl(237deg, 16%, 23%);
-  }
-} */
-
 body {
   background: var(--base);
   color: var(--text);
   font-family: var(--font-geist-sans), sans-serif;
+  scroll-behavior: smooth;
+}
+::selection {
+  background: var(--peach);
+  color: var(--mantle);
 }
