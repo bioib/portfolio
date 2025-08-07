@@ -8,12 +8,10 @@ export default function Header() {
       {/* Mobile Navbar */}
       <MobileNav />
       {/* Navbar */}
-      <nav className="bg-mantle shadow-base hidden p-6 shadow-md md:flex">
+      <nav className="bg-ctp-lavender-800 text-ctp-text shadow-base hidden p-6 shadow-md md:flex">
         <div className="container mx-auto flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <h1 className="text-maroon hover:text-maroon-hover text-xl font-bold">
-              Fabio Reva Yanda
-            </h1>
+            <h1 className="text-xl font-bold">foreynd</h1>
           </Link>
           <div className="flex items-center justify-center gap-4 font-medium">
             <Link

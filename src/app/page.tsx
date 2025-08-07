@@ -3,13 +3,14 @@ import Header from "@/components/header";
 import { Folder, Info, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 import { SiGithub } from "@icons-pack/react-simple-icons";
+import { Button } from "@/components/ui/button";
 
 const projects = [
   {
     name: "Next.js Portfolio Website",
     description:
       "A personal portfolio built with Next.js, TypeScript, and TailwindCSS, featuring dynamic project showcases and responsive design.",
-    url: "https://github.com/bioib/nextjs-portfolio",
+    url: "https://github.com/bioib/portfolio",
     image:
       "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80",
   },
@@ -59,23 +60,20 @@ const contactLinks = [
 
 export default function Home() {
   return (
-    <div>
+    <div className="dark">
       <Header />
       {/* Hero Section */}
       <section className="py-20 text-center">
         <div className="container mx-auto px-4">
-          {/* <h2 className="mb-4 text-5xl font-bold">
-            Hi, I&apos;m Fabio Reva Yanda
-          </h2> */}
+          <h2 className="mb-4 text-5xl font-bold">
+            Hi 👋, I&apos;m Fabio Reva Yanda
+          </h2>
           <p className="text-subtext mx-auto mb-6 max-w-md text-2xl font-medium">
             Building Scalable, High-Performance Web Apps with Modern Tech Stacks
           </p>
-          <Link
-            href="#contact"
-            className="bg-blue text-mantle hover:bg-blue-hover mx-auto flex w-fit gap-2 rounded px-4 py-2 font-medium transition-colors"
-          >
+          <Button>
             <Mail /> Contact Me
-          </Link>
+          </Button>
         </div>
       </section>
 
